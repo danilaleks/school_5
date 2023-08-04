@@ -31,3 +31,6 @@ def edit_post(request, pk):
         return render(request, 'edit_post.html', {'form': form})
     else:
         return redirect('post_list')
+ def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'post_list.html', {'posts': posts})        
