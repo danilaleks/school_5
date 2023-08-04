@@ -1,7 +1,9 @@
-from django.urls import path
-from . import views
+# myproject/urls.py
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('add/', views.add_post, name='add_post'),
-    path('edit/<int:pk>/', views.edit_post, name='edit_post'),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('', include('myapp.urls')),
 ]
