@@ -1,0 +1,7 @@
+<!-- myapp/templates/add_post.html -->
+<h1>Add Post</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add Post</button>
+</form>
